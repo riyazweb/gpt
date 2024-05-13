@@ -4,9 +4,15 @@ import tiktoken
 import numpy as np
 
 # download the tiny shakespeare dataset
-input_file_path = "/content/gpt/data/own/dialogs.txt"
-with open(input_file_path, 'r', encoding='utf-8') as f:
-    data = f.read()
+# input_file_path = "/content/gpt/data/own/dialogs.txt"
+# with open(input_file_path, 'r', encoding='utf-8') as f:
+#     data = f.read()
+
+import pandas as pd
+
+df = pd.read_csv('data.csv')
+data = df['text'].str.cat(sep='\n')
+
 n = len(data)
 train_data = data[:int(n*0.9)]
 val_data = data[int(n*0.9):]
