@@ -4,7 +4,7 @@ import tiktoken
 import numpy as np
 
 # download the tiny shakespeare dataset
-input_file_path = "input.txt"
+input_file_path = "/content/gpt/data/own/dialogs.txt"
 with open(input_file_path, 'r', encoding='utf-8') as f:
     data = f.read()
 n = len(data)
